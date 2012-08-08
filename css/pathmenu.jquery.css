@@ -1,0 +1,65 @@
+﻿::selection
+{
+    background: rgba(0,0,0,0);
+}
+.path-button, .path-base-button
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 350ms;
+    -webkit-transition: all 350ms;
+}
+.path-base-button
+{
+    z-index: 2;
+}
+.path-base-button a, .path-button a
+{
+    color: #fff;
+    text-align: center;
+    display: block;
+    cursor: pointer;
+    padding: 0;
+    border-radius: 50%;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.4) 0 0 5px 0,rgba(0, 0, 0, 0.2) 0 0 0 1px,inset rgba(0, 0, 0, 0.5) 0 0 2px 0;
+    -webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -o-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    transition: all 350ms;
+    -webkit-transition: all 350ms;
+    border: 5px solid #fff;
+}
+.path-base-button a
+{
+    background: #fff;
+    background: -webkit-linear-gradient(#E85738, #CB2C16);
+    background: -moz-linear-gradient(#E85738, #CB2C16);
+    background: -o-linear-gradient(#E85738, #CB2C16);
+    background: -ms-linear-gradient(#E85738, #CB2C16);
+    background: linear-gradient(#E85738, #CB2C16);
+    font-size: 70px;
+    font-weight: 700;
+    height: 70px;
+    width: 70px;
+    line-height: 60px;
+}
+.path-button.open a, .path-base-button.open a
+{
+    transform: rotate(765deg);
+    -webkit-transform: rotate(765deg);
+    -moz-transform: rotate(765deg);
+    -o-transform: rotate(765deg);
+    -ms-transform: rotate(765deg);
+}
+.path-button a
+{
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    background: #222;
+    font-size: 12px;
+}

@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>css3-path menu</title>
+    <link type="text/css" rel="stylesheet" href="css/pathmenu.jquery.css" />
+    <style type="text/css">
+        *{
+            outline: 0;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+        .main-menu
+        {
+            position: absolute;
+            top: 50%;
+            right: 50%;
+        }
+        ul,li
+        {
+            list-style:none;
+            margin: 0;
+            padding:0;
+        }
+        a{
+        text-decoration:none;
+        }
+    </style>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/pathmenu.jquery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#menu-container').pathmenu({ base: '#base_button', direction: 'topleft',width:200 });
+        });
+    </script>
+</head>
+<body>
+    <select>
+        <option>Left</option>
+        <option>Right</option>
+        <option>TopRight</option>
+        <option>TopLeft</option>
+        <option>Left</option>
+    </select>
+    <div class="main-menu">
+        <ul id="menu-container">
+            <li id="base_button"><a href="#">+</a></li>
+            <li id="button1"><a href="#">1</a></li>
+            <li id="button2"><a href="#">2</a></li>
+            <li id="button3"><a href="#">3</a></li>
+            <li id="button4"><a href="#">4</a></li>
+            <li id="button5"><a href="#">5</a></li>
+        </ul>
+    </div>
+</body>
+</html>
