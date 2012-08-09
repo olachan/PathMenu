@@ -15,11 +15,8 @@
 {
     z-index: 2;
 }
-.path-base-button a, .path-button a
+.path-base-button, .path-button
 {
-    color: #fff;
-    text-align: center;
-    display: block;
     cursor: pointer;
     border-radius: 50%;
     text-align: center;
@@ -33,7 +30,7 @@
     -webkit-transition: all 350ms;
     border: 5px solid #fff;
 }
-.path-base-button a
+.path-base-button
 {
     background: #fff;
     background: -webkit-linear-gradient(#E85738, #CB2C16);
@@ -45,17 +42,9 @@
     font-weight: 700;
     height: 70px;
     width: 70px;
-    line-height: 60px;
+    line-height: 100%;
 }
-.path-button.open a, .path-base-button.open a
-{
-    transform: rotate(765deg);
-    -webkit-transform: rotate(765deg);
-    -moz-transform: rotate(765deg);
-    -o-transform: rotate(765deg);
-    -ms-transform: rotate(765deg);
-}
-.path-button a
+.path-button
 {
     width: 40px;
     height: 40px;
@@ -63,3 +52,22 @@
     background: #222;
     font-size: 12px;
 }
+.path-base-button a, .path-button a
+{
+    color: #fff;
+    text-align: center;
+    display: block;
+}
+.path-base-button a
+{
+    line-height: 60px;
+}
+.path-button.open, .path-base-button.open
+{
+    transform: rotate(765deg);
+    -webkit-transform: rotate(765deg);
+    -moz-transform: rotate(765deg);
+    -o-transform: rotate(765deg);
+    -ms-transform: rotate(765deg);
+}
+
