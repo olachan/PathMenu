@@ -7,8 +7,9 @@
     position: absolute;
     top: 0;
     left: 0;
-    transition: all 350ms;
-    -webkit-transition: all 350ms;
+    transition: all 250ms;
+    -webkit-transition: all 250ms;
+    padding:0;
 }
 .path-base-button
 {
@@ -20,7 +21,6 @@
     text-align: center;
     display: block;
     cursor: pointer;
-    padding: 0;
     border-radius: 50%;
     text-align: center;
     box-shadow: rgba(0, 0, 0, 0.4) 0 0 5px 0,rgba(0, 0, 0, 0.2) 0 0 0 1px,inset rgba(0, 0, 0, 0.5) 0 0 2px 0;

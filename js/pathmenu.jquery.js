@@ -7,9 +7,11 @@
              for(var i=0;i<buttonCount;i++)
              {
                  if (direction === 'left') {
-                     positionLeft = positionLeft - offset;
+
+                     positionLeft = positionLeft - offset/buttonCount;
                  } else if (direction === 'right') {
-                     positionLeft = positionLeft + offset;
+
+                     positionLeft = positionLeft + offset/buttonCount;
                  } else if (direction === 'bottomright') {
                      positionLeft = initPosition.left + offset * Math.cos(Math.PI/1.5 * i / buttonCount);
                      positionTop = initPosition.top + offset * Math.sin(Math.PI/1.5 * i / buttonCount);
@@ -29,12 +31,12 @@
         var baseButton = null;
         if (config.base) {
             baseButton = $(config.base);
-            baseButton.addClass('path-base-button');
         } else {
             baseButton = $('.path-base-button');
         }
+        baseButton.addClass('path-base-button');
         var element = this,
-        delay = config.delay ? config.delay : 40,
+        delay = config.delay ? config.delay : 50,
         delayTime,
         menuButtons = baseButton.siblings().addClass('path-button'),
         direction = config.direction ? config.direction : 'left',
@@ -46,24 +48,24 @@
         initPositions(initPosition, menuWidth, direction, menuButtons.length);
 
         baseButton.toggle(function () {
-            menuButtons.addClass('open');
-            baseButton.addClass('open');
+            $(this).addClass('open');
             menuButtons.each(function (i) {
                 delayTime = i * delay;
                 var ele = $(this);
                 window.setTimeout(function () {
                     var position = positions[i]; //setNextPosition(offset, direction);
                     ele.css({ 'top': position.top, 'left': position.left });
+                    ele.addClass('open');
                 }, delayTime);
             });
         }, function () {
-            menuButtons.removeClass('open');
-            baseButton.removeClass('open');
+            $(this).removeClass('open');
             menuButtons.each(function (i) {
                 delayTime = i * delay;
                 var ele = $(this);
                 window.setTimeout(function () {
                     ele.css({ 'top': initPosition.top, 'left': initPosition.left });
+                    ele.removeClass('open');
                 }, delayTime);
             });
         });

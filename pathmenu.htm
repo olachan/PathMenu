@@ -4,15 +4,25 @@
     <title>css3-path menu</title>
     <link type="text/css" rel="stylesheet" href="css/pathmenu.jquery.css" />
     <style type="text/css">
+        body{
+            font-family: sans-serif;
+        }
         *{
             outline: 0;
             -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
         }
-        .main-menu
+        #path_demo
         {
             position: absolute;
+            top: 30%;
+            left: 50%;
+            width: 400px;
+            height: 400px;
+        }
+        #menu-container
+        {
             top: 50%;
-            right: 50%;
+            position: absolute;
         }
         ul,li
         {
@@ -28,26 +38,34 @@
     <script type="text/javascript" src="js/pathmenu.jquery.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
-            $('#menu-container').pathmenu({ base: '#base_button', direction: 'topleft',width:200 });
+            $('#menu-container').pathmenu({ base: '#base_button', direction: 'topright',width:150 });
+            $('#direction_list').bind('change',function(e){
+                var direction = e.target.value;
+                var width = 150;
+                if (direction == 'right'||direction=='left') width = 400;
+                $('#menu-container').pathmenu({ base: '#base_button', direction:  direction,width:width });
+            })
         });
     </script>
 </head>
 <body>
-    <select>
-        <option>Left</option>
-        <option>Right</option>
-        <option>TopRight</option>
-        <option>TopLeft</option>
-        <option>Left</option>
-    </select>
-    <div class="main-menu">
+    <div id="path_demo">
+        <select id="direction_list">
+            <option>left</option>
+            <option>right</option>
+            <option selected>topright</option>
+            <option>topleft</option>
+            <option>bottomright</option>
+            <option>bottomleft</option>
+        </select>
+
         <ul id="menu-container">
-            <li id="base_button"><a href="#">+</a></li>
             <li id="button1"><a href="#">1</a></li>
             <li id="button2"><a href="#">2</a></li>
             <li id="button3"><a href="#">3</a></li>
             <li id="button4"><a href="#">4</a></li>
             <li id="button5"><a href="#">5</a></li>
+            <li id="base_button"><a href="#">+</a></li>
         </ul>
     </div>
 </body>
